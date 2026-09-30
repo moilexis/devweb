@@ -1,0 +1,21 @@
+h2{
+    color: blue;
+}
+hr{
+    color : indianred;
+}
+table,th,td {
+    border : 1px solid red;
+    border-collapse: collapse;
+
+}
+th,td {
+    padding : 10px;
+}
+
+form{
+    max-width: 200px;
+    padding : 50px;
+    background-color: indianred;
+    border: 1px solid black;
+}
