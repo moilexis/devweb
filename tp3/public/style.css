@@ -1,0 +1,78 @@
+nav{
+    background-color: darkgray;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    min-height: 80px;
+    padding: 10px;
+}
+a{
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+h2{
+    color: blue;
+}
+hr{
+    color : indianred;
+}
+table{
+    margin: 50px;
+}
+table,th,td {
+    border : 1px solid black;
+    border-collapse: collapse;
+}
+th,td {
+    width: 50px;
+    height: 50px;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 16px;
+    font-family: sans-serif;
+    padding: 15px;
+    border: #0056b3 1px solid;
+    border-radius: 10px;
+    width: 400px;
+    margin: 50px;
+}
+div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+input[type="number"] {
+    width: 80px;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+input[type="color"] {
+    width: 50px;
+    height: 31px; /* Aligné sur la hauteur du champ nombre */
+    padding: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+button:hover {
+    background: #0056b3;
+}
