@@ -5,6 +5,7 @@ nav{
     justify-content: start;
     min-height: 80px;
     padding: 10px;
+    margin-bottom: 20px;
 }
 a{
     color: white;
