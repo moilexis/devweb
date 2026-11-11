@@ -8,7 +8,7 @@ nav{
     margin-bottom: 20px;
 }
 button {
-    background: #a1c91c;
+    background: darkolivegreen;
     color: white;
     border: none;
     border-radius: 4px;
@@ -16,9 +16,12 @@ button {
     font-weight: bold;
     padding: 10px 20px;
 }
-
+h1{
+    font-family: Verdana, serif;
+}
 
 h2{
+    font-family: Verdana, serif;
     color: #a1c91c;
 }
 hr{
@@ -49,9 +52,32 @@ form{
     border: 1px solid black;
 }
 
-.table-container{
+
+.echiquiers-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;               /* Passe l'un sous l'autre sur petit écran */
+    margin-top: 5%;
+}
+
+
+.echiquier-presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.echiquier-presentation h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+
+.table-container {
     display: flex;
     justify-content: center;
-    width: 100%;
-    margin-top: 10%;
 }
