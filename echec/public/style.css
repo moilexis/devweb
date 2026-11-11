@@ -47,9 +47,14 @@ th,td {
 }
 
 form{
-
     padding : 50px;
-    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: start;
+    gap : 20px;
+
 }
 
 

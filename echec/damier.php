@@ -5,22 +5,39 @@ include ("fragments/navigation.html");
 
 echo"<h1>Échiquier</h1>";
 
+$donnees = scandir("data");
+echo "<form method='post' action=''>";
+echo "<label for='source'>Selectionnez la source : </label>";
+echo "<select name='source' id ='source'>";
+foreach ($donnees as $fichier) {
+    if (strtolower(pathinfo($fichier, PATHINFO_EXTENSION)) === 'csv') {
+        echo "<option value='$fichier'>$fichier</option>";
+    }
+}
+echo "</select>";
+
+echo "<button type='submit''>Envoyer</button>";
+echo "</form>";
+
 $tableau = [];
 for ($i = 0; $i < 8; $i++) {
     for ($j = 0; $j < 8; $j++) {
         $tableau[$i][$j] = "";
     }
 }
-$file = "data/damier.csv";
+if (isset($_POST['source']) && !empty($_POST['source'])) {
+    // basename() empêche les failles de sécurité (traversée de répertoire)
+    $nomFichier = basename($_POST['source']);
+    $file = "data/" . $nomFichier;
+}
 $fp = fopen($file, "r");
 $data = fgetcsv($fp, 1024,",");
 while($data = fgetcsv($fp, 1024,",")) {
     $tableau[$data[3]-1][$data[4]-1] = $data[2];
 }
 fclose($fp);
+
 echo "<div class='echiquiers-wrapper'>";
-
-
 echo "<div class='echiquier-presentation'>";
 echo "<h1>Echiquier 1 (blancs en bas)</h1>";
 echo "<div class='table-container'>";
@@ -65,9 +82,6 @@ for ($i = 0; $i < 8; $i++) {
 echo "</table>";
 echo "</div>";
 echo "</div>";
-
 echo "</div>";
-
-
 ?>
 
