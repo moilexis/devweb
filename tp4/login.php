@@ -16,11 +16,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//si t'as mis le lien dans l'URL c'es
         $ok=mysqli_stmt_execute($req_prepare);
         $result=mysqli_stmt_get_result($req_prepare);
         if (mysqli_num_rows($result) >0) {
-            echo "<p>OUI</p>";
-        } else {
-            echo "<p>NON</p>";
+            session_start();
+            $_SESSION['login'] = $login;
+            $_SESSION['password'] = $password;
+            $_SESSION['id'] = $_SERVER["REMOTE_ADDR"];
+            $_SESSION["date"] = date("Y-m-d H:i:s");
+            header("Location:page1.php");
+            exit();
+        }
+        else {
+            header("Location:acceuil.php?error=1003");
+            exit();
         }
 
+    }
+    else {
+        header("Location:acceuil.php?error=1002");
+        exit();
     }
 }
 else{
@@ -28,5 +40,6 @@ else{
     exit();//pour etre sur de rediriger
 }
 //on prépare une req avec mysqli_prepare
+//il faut faire une fonction 'vérifier login et mdp' et on renvoie oui ou non
 
-
+//session dans xampp/tmp/

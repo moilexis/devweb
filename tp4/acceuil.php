@@ -8,5 +8,14 @@ echo "<form action='login.php' method='POST'>
 </form>";
 
 if (isset($_GET['error'])) {
-    echo "<p>tu dois remplir le formulaire</p>";
+    $error=$_GET['error'];
+    switch ($error) {
+        case 1001:
+            echo "Erreur : on ne passe pas comme ca";
+
+            case 1002:
+                echo "Erreur : remplis le formulaire";
+                case 1003:
+                    echo "Erreur : login ou mot de passe incorrect";
+    }
 }
